@@ -1,3 +1,4 @@
+package Collections;
 class StringBuilderDemo {
     public static void main(String[] args) {
 
