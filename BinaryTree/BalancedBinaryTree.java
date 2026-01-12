@@ -1,7 +1,6 @@
-// Leetcode 543
- 
-public class DiameterOfBinaryTree {
+import java.util.*;
 
+class BalancedBinaryTree {
     static class Node {
         int data;
         Node left, right;
@@ -10,19 +9,19 @@ public class DiameterOfBinaryTree {
         }
     }
 
-    static int maximum = 0;
-
-    static int diameterOfBinaryTree(Node root) {
-        height(root);
-        return maximum;
-    }
-
     static int height(Node root){
-        if(root == null)    return 0;
+        if(root == null )    return 0;
         int left = height(root.left);
         int right = height(root.right);
-        maximum = Math.max(maximum, left + right);
         return 1 + Math.max(left, right);
+    }
+    static boolean isBalanced(Node root) {
+        if(root == null) return true;
+        int left = height(root.left);
+        int right = height(root.right);
+        int d = left - right;
+        if(d > 1 || d < -1)     return false;
+        return isBalanced(root.left) && isBalanced(root.right);
     }
 
     public static void main(String args[]){
@@ -35,6 +34,6 @@ public class DiameterOfBinaryTree {
         a.left = c; a.right = d;
         Node e = new Node(11);
         b.right = e;
-        System.out.println("Height of Tree is :" + diameterOfBinaryTree(root));
+        System.out.println("Height of Tree is : " + isBalanced(root));
     }
 }
