@@ -37,8 +37,8 @@ public class BST_Insertion_Deletion {
         else if(key>root.val) root.right = delete(root.right,key);
         else{
             if(root.left==null && root.right==null) return null;
-            else if(root.left==null)return root.right;
-            else if(root.right==null) return root.left;
+            else if(root.left==null)    return root.right;
+            else if(root.right==null)    return root.left;
             else{
                 int small = getSmall(root.right);
                 root.val = small;
