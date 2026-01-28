@@ -1,0 +1,45 @@
+Storing a graph:-
+1) Adjacency List
+2) Adjacency Matrix
+3) Edge List
+4) 2D Matrix (Implicit Graph)
+
+
+
+Adjacency List: List of List
+we write the vertex name as 0 to (v - 1). where v = no of nodes
+src no -> {src, dest}
+
+0 -> {0, 2}
+1 -> {1, 2}, {1, 3}
+2 -> {2, 0}, {2, 1}, {2, 3}
+3 -> {3, 2}, {3, 1}
+
+when we create adjacency list the we will going to store array of arraylist and its syntax is 
+        ArrayList<Edge> graph[];
+
+To add new edge in ArrayList we write
+        graph[i].add(new Edge(src, dest));
+here i is the loop run from 0 to v - 1
+
+
+
+Adjacency Matrix:
+when we create adjacency matrix then we will going to make  matrix of V x V where V is the no of vertex in matrix it oly store 0, 1
+
+for ex: 
+       0   1   2   3
+    __________________
+  0 |  0   0   1   0 |
+  1 |  0   0   1   1 |
+  2 |  1   1   0   1 |
+  3 |  0   1   1   0 |
+    __________________
+
+    where 0 means there is a no edge present and 1 means there is edge present between this vertex
+
+
+Edge List: 
+For Ex: Edges = {{0,2}, {1,2}, {1,3}, {2,3}}
+
+Implicit Graph:
